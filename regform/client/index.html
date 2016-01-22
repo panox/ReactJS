@@ -20,11 +20,15 @@
 
     <script type="text/babel">
       var RegForm = React.createClass({
-        register: function () {
+        register: function (e) {
           e.preventDefault();
           var firstName = this.refs.firstName.value.trim();
           var lastName = this.refs.lastName.value.trim();
           var email = this.refs.email.value.trim();
+
+          if (!firstName || !lastName || !email) {
+            return
+          }
 
           alert('Thank You' + firstName + ' ' + lastName + ' for registering '+email);
           this.refs.firstName.value = '';
