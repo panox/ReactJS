@@ -11,6 +11,9 @@
     <div id="HelloMessage"></div>
     <script type="text/babel">
       var HelloMessage = React.createClass({
+        sayMessage: function () {
+          alert(this.props.children);
+        },
         render: function () {
           return <div>
                   <h3>Hello {this.props.word}!</h3>
