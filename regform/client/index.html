@@ -19,6 +19,15 @@
     </div>
 
     <script type="text/babel">
+      var AlertBox = React.createClass({
+        render: function () {
+          return(
+            <div className="alert alert-danger">
+              Please submit all fields
+            </div>
+          );
+        }
+      });
       var RegForm = React.createClass({
         getInitialState: function () {
           return{
@@ -44,6 +53,7 @@
           return(
             <div>
               <form onSubmit={this.register}>
+                <AlertBox />
                 <div className = "form-group">
                   <label htmlFor = "firstName"> First Name: </label>
                   <input type="text" className="form-control"
