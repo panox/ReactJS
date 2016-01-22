@@ -41,7 +41,8 @@
           var email = this.refs.email.value.trim();
 
           if (!firstName || !lastName || !email) {
-            return
+            this.setState({showAlert: true});
+            return;
           }
 
           alert('Thank You' + firstName + ' ' + lastName + ' for registering '+email);
@@ -53,7 +54,7 @@
           return(
             <div>
               <form onSubmit={this.register}>
-                <AlertBox />
+                {this.state.showAlert ? <AlertBox /> : null}
                 <div className = "form-group">
                   <label htmlFor = "firstName"> First Name: </label>
                   <input type="text" className="form-control"
