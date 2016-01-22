@@ -22,7 +22,7 @@
       var AlertBox = React.createClass({
         render: function () {
           return(
-            <div className="alert alert-danger">
+            <div className={"alert alert-"+this.props.type}>
               {this.props.children}
             </div>
           );
@@ -54,7 +54,7 @@
           return(
             <div>
               <form onSubmit={this.register}>
-                {this.state.showAlert ? <AlertBox>Please fill in all fields</AlertBox> : null}
+                {this.state.showAlert ? <AlertBox type="danger">Please fill in all fields</AlertBox> : null}
                 <div className = "form-group">
                   <label htmlFor = "firstName"> First Name: </label>
                   <input type="text" className="form-control"
