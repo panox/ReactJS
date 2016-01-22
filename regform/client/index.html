@@ -21,7 +21,7 @@
     <script type="text/babel">
       var RegForm = React.createClass({
         register: function () {
-
+          e.preventDefault();
         },
         render: function () {
           return(
@@ -42,7 +42,7 @@
                   <input type="email" className="form-control"
                     placeholder="Email" ref="email" />
                 </div>
-                <input className="btn btn-primary" value="submit" />
+                <input type="submit" className="btn btn-primary" value="Submit" />
               </form>
             </div>
           )
@@ -50,7 +50,7 @@
       });
       ReactDOM.render(
         <RegForm />,
-        document.getElementById('regForm')§
+        document.getElementById('regForm')
       );
     </script>
   </body>
