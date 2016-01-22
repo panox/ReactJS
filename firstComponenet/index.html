@@ -9,6 +9,12 @@
   </head>
   <body>
     <div id="HelloMessage"></div>
-    <script type="text/babel"></script>
+    <script type="text/babel">
+      var HelloMessage = React.createClass({
+        render: function () {
+          return <div>Hello World!</div>;
+        }
+      });
+    </script>
   </body>
 </html>
