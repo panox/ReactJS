@@ -20,6 +20,11 @@
 
     <script type="text/babel">
       var RegForm = React.createClass({
+        getInitialState: function () {
+          return{
+            showAlert: false
+          }
+        },
         register: function (e) {
           e.preventDefault();
           var firstName = this.refs.firstName.value.trim();
