@@ -20,10 +20,13 @@
 
     <script type="text/babel">
       var RegForm = React.createClass({
+        register: function () {
+
+        },
         render: function () {
           return(
             <div>
-              <form>
+              <form onSubmit={this.register}>
                 <div className = "form-group">
                   <label htmlFor = "firstName"> First Name: </label>
                   <input type="text" className="form-control"
@@ -47,7 +50,7 @@
       });
       ReactDOM.render(
         <RegForm />,
-        document.getElementById('regForm')
+        document.getElementById('regForm')§
       );
     </script>
   </body>
