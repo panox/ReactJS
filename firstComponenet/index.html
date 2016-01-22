@@ -12,12 +12,15 @@
     <script type="text/babel">
       var HelloMessage = React.createClass({
         render: function () {
-          return <div>Hello World!</div>;
+          return <div>
+                  <h3>Hello {this.props.word}!</h3>
+                  <p>{this.props.children}</p>
+                 </div>;
         }
       });
 
       ReactDOM.render(
-        <HelloMessage />,
+        <HelloMessage word="Everyone">What are you up to?</HelloMessage>,
         document.getElementById('HelloMessage')
       );
     </script>
