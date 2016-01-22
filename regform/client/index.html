@@ -22,6 +22,14 @@
       var RegForm = React.createClass({
         register: function () {
           e.preventDefault();
+          var firstName = this.refs.firstName.value.trim();
+          var lastName = this.refs.lastName.value.trim();
+          var email = this.refs.email.value.trim();
+
+          alert('Thank You' + firstName + ' ' + lastName + ' for registering '+email);
+          this.refs.firstName.value = '';
+          this.refs.lastName.value = '';
+          this.refs.email.value = '';
         },
         render: function () {
           return(
