@@ -14,7 +14,6 @@ app.use(express.static(path.join(__dirname, 'client')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
-
 // Start Server
 app.listen(app.get('port'), function () {
   console.log('server listening');
