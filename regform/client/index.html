@@ -19,6 +19,21 @@
     </div>
 
     <script type="text/babel">
+      var RegForm = React.createClass({
+        render: function () {
+          return(
+            <div>
+              <form>
+                <div className = "form-group">
+                  <label htmlFor = "firstName"> First Name: </label>
+                  <input type="text" className="form-control"
+                    placeholder="First Name" ref="firstName" />
+                </div>
+              </form>
+            </div>
+          )
+        }
+      });
     </script>
   </body>
 </html>
