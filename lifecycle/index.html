@@ -39,6 +39,19 @@
           },
           componentWillReceiveProps: function () {
             console.log('invoking componentWillReceiveProps');
+          },
+          shouldComponentUpdate: function () {
+            console.log('invoking shouldComponentUpdate');
+            return true;
+          },
+          componentWillUpdate: function () {
+            console.log('invoking componentWillUpdate');
+          },
+          componentDidUpdate: function () {
+            console.log('invoking componentDidUpdate');
+          },
+          componentWillUnmount: function () {
+            console.log('invoking componentWillUnmount');
           }
       });
     </script>
