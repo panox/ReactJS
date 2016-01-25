@@ -13,14 +13,23 @@
       var myComponent = React.createClass({
         getDefaultProps: function () {
           console.log("invoking getDefaultProps");
-          return {
-            myProp: "Foobar"
+            return (
+              myProp: "Foo"
+            );
           },
           getInitialState: function () {
             console.log("invoking getInitialState");
             return null;
           },
-        }
+          componentWillMount: function () {
+            console.log("invoking componentWillMount");
+          },
+          componentDidMount: function () {
+            console.log("invoking componentDidMount");
+          },
+          render: function () {
+
+          }
       });
     </script>
   </body>
