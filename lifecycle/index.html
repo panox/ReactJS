@@ -9,6 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.25/browser.min.js"></script>
   </head>
   <body>
+    <div id="container"></div>
     <script type="text/babel">
       var myComponent = React.createClass({
         getDefaultProps: function () {
@@ -52,6 +53,12 @@
           },
           componentWillUnmount: function () {
             console.log('invoking componentWillUnmount');
+          },
+          changeProp: function () {
+            this.setProps({myProp: "Bar"});
+          },
+          removeHandler: function () {
+            ReactDom.unmountComponentAtNode(document.getElementById('container'))
           }
       });
     </script>
