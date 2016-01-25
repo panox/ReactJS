@@ -36,6 +36,9 @@
                 <button onClick={this.removeHandler}>Unmount</button>
               </div>
             )
+          },
+          componentWillReceiveProps: function () {
+            console.log('invoking componentWillReceiveProps');
           }
       });
     </script>
