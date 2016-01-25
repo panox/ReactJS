@@ -5,7 +5,8 @@ var MyComponent = React.createClass({
     };
   },
   propTypes: {
-    myString: React.PropTypes.string
+    myString: React.PropTypes.string,
+    myArray: React.PropTypes.array
   },
   render: function () {
     return (
@@ -16,6 +17,6 @@ var MyComponent = React.createClass({
   }
 });
 ReactDOM.render(
-  <MyComponent />,
+  <MyComponent myArray = {[1,2,3]}/>,
   document.getElementById('container')
 );
