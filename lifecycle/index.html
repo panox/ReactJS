@@ -10,12 +10,16 @@
   </head>
   <body>
     <script type="text/babel">
-      var myComponent = Reac.createClasee({
+      var myComponent = React.createClass({
         getDefaultProps: function () {
           console.log("invoking getDefaultProps");
           return {
             myProp: "Foobar"
-          }
+          },
+          getInitialState: function () {
+            console.log("invoking getInitialState");
+            return null;
+          },
         }
       });
     </script>
