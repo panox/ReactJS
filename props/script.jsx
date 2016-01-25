@@ -4,6 +4,9 @@ var MyComponent = React.createClass({
       myString: "Hello World!"
     };
   },
+  propTypes: {
+    myString: React.PropTypes.string
+  },
   render: function () {
     return (
       <div>
