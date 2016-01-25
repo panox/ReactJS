@@ -28,7 +28,14 @@
             console.log("invoking componentDidMount");
           },
           render: function () {
-
+            console.log('invoking render');
+            return (
+              <div>
+                <h1>{this.props.myProp}</h1>
+                <button onClick={this.changeProp}>Change Property</button>
+                <button onClick={this.removeHandler}>Unmount</button>
+              </div>
+            )
           }
       });
     </script>
