@@ -7,7 +7,7 @@ var MyComponent = React.createClass({
   render: function () {
     return (
       <div>
-        <h3>myString: { this.props.myString }</h3>
+        <h3>myString: { this.props.myString } </h3>
       </div>
     )
   }
