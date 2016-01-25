@@ -14,9 +14,9 @@
       var MyComponent = React.createClass({
         getDefaultProps: function () {
           console.log("invoking getDefaultProps");
-            return (
+            return {
               myProp: "Foo"
-            );
+            };
           },
           getInitialState: function () {
             console.log("invoking getInitialState");
@@ -58,10 +58,10 @@
             this.setProps({myProp: "Bar"});
           },
           removeHandler: function () {
-            ReactDom.unmountComponentAtNode(document.getElementById('container'))
+            ReactDOM.unmountComponentAtNode(document.getElementById('container'))
           }
       });
-      ReactDom.render(
+      ReactDOM.render(
         <MyComponent />,
         getElementById('container')
       );
