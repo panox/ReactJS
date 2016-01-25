@@ -11,7 +11,7 @@
   <body>
     <div id="container"></div>
     <script type="text/babel">
-      var myComponent = React.createClass({
+      var MyComponent = React.createClass({
         getDefaultProps: function () {
           console.log("invoking getDefaultProps");
             return (
@@ -61,6 +61,10 @@
             ReactDom.unmountComponentAtNode(document.getElementById('container'))
           }
       });
+      ReactDom.render(
+        <MyComponent />,
+        getElementById('container')
+      );
     </script>
   </body>
 </html>
