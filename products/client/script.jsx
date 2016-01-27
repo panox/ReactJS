@@ -1,11 +1,14 @@
 var Products = React.createClass({
   getInitialState: function () {
-    
+    return {
+      productData: [],
+      url: "/api/products"
+    };
   },
   render: function () {
     return(
       <div>
-        <h2>Products</h2>
+        <h2>{this.state.url}</h2>
         <ProductForm />
         <ProductList />
       </div>
