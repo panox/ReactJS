@@ -46,7 +46,7 @@ var Products = React.createClass({
 });
 
 var ProductForm = React.createClass({
-  handleSubmit: function () {
+  handleSubmit: function (e) {
     e.preventDefault();
     var submittedField = {
       id: this.refs.id.value.trim(),
@@ -67,6 +67,7 @@ var ProductForm = React.createClass({
         <h3>Add Product</h3>
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
+            <input type="text" className="form-control" placeholder="id" ref="id"></input>
             <input type="text" className="form-control" placeholder="name" ref="name"></input>
             <textarea type="text" className="form-control" placeholder="description" ref="description"></textarea>
             <input type="text" className="form-control" placeholder="price" ref="price"></input>
