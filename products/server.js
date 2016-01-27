@@ -29,8 +29,8 @@ app.get('/api/products', function (req, res) {
 app.post('/api/products', function (req, res) {
   fs.readFile(PRODUCTS_FILE, function (err, data) {
     var products = JSON.parse(data);
-    products.puch(req.body);
-    fs.writeFile(PRODUCTS_FILE, JSON.strinify(products, null, 3), function (err) {
+    products.push(req.body);
+    fs.writeFile(PRODUCTS_FILE, JSON.stringify(products, null, 3), function (err) {
       res.setHeader('Cache-Control', 'no-cache');
       res.json(JSON.parse(products));
     });
