@@ -34,7 +34,7 @@ var Products = React.createClass({
       <div>
         <h2>Products</h2>
         <ProductForm />
-        <ProductList />
+        <ProductList productData={this.state.productData}/>
       </div>
     );
   }
