@@ -7,9 +7,14 @@ var Nav = React.createClass({
     return (
       <div>
         <ul className="nav">
-          
+
         </ul>
       </div>
     )
   }
 });
+
+ReactDOM.render(
+  <Nav menuItems={['Home', 'About', 'Services', 'Contact']} />,
+  document.getElementById('nav')
+);
