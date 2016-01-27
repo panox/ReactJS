@@ -4,10 +4,13 @@ var Products = React.createClass({
       url: this.state.url,
       dataType: 'json',
       cache: false,
-      success: function () {
-        
+      success: function (data) {
+        console.log(data);
+        setState({
+          productData: data 
+        });
       },
-      error: function () {
+      error: function (xhr, status, err) {
 
       }
     });
