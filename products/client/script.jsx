@@ -1,4 +1,9 @@
 var Products = React.createClass({
+  getDefaultprops: function () {
+    return {
+      interval: 2000
+    };
+  },
   getInitialState: function () {
     return {
       productData: [],
@@ -8,7 +13,7 @@ var Products = React.createClass({
   render: function () {
     return(
       <div>
-        <h2>{this.state.url}</h2>
+        <h2>Products</h2>
         <ProductForm />
         <ProductList />
       </div>
