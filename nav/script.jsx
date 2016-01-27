@@ -9,6 +9,15 @@ var Nav = React.createClass({
   },
   render: function () {
     var self = this;
+    if (self.state.current == 0) {
+      var content = 'Welcome to the homepage'
+    } else if (self.state.current === 1) {
+      var content = 'Welcome to the about'
+    } else if (self.state.current === 2) {
+      var content = 'Welcome to the services'
+    } else if (self.state.current === 3) {
+      var content = 'Welcome to the contact'
+    }
     return (
       <div>
         <ul className="nav">
@@ -23,6 +32,7 @@ var Nav = React.createClass({
           })}
         </ul>
         <h1>{this.props.menuItems[this.state.current]}</h1>
+        <p>{content}</p>
       </div>
     )
   }
