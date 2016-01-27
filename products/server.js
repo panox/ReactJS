@@ -1,8 +1,11 @@
 var express = require('express');
+var fs = require('fs');
 var path = require('path');
 var bodyParser = require('body-parser');
 
 var app = express();
+
+var PRODUCTS_FILE = path.join(__dirname, 'products.json');
 
 // Port
 app.set('port', (process.env.PORT || 3000));
