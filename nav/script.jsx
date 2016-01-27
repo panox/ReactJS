@@ -2,6 +2,11 @@ var Nav = React.createClass({
   getInitialState: function () {
     return {current: 0}
   },
+  clicked: function (index) {
+    this.setState({
+      current: index
+    });
+  },
   render: function () {
     var self = this;
     return (
