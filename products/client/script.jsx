@@ -73,6 +73,16 @@ var ProductList = React.createClass({
   }
 });
 
+var Product = React.createClass({
+  render: function () {
+    return(
+      <div>
+        <h3>{this.props.productFields.name}</h3>
+      </div>
+    );
+  }
+});
+
 ReactDOM.render(
   <Products />,
   document.getElementById('products')
