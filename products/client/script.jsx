@@ -6,7 +6,7 @@ var Products = React.createClass({
       cache: false,
       success: function (data) {
         console.log(data);
-        setState({
+        this.setState({
           productData: data
         });
       }.bind(this),
@@ -62,12 +62,12 @@ var ProductList = React.createClass({
         image_url: product.image_url
       }
       return(
-        <Product />
-      )
+        <Product productFields={productFields}/>
+      );
     });
     return(
       <div>
-        List
+        {productNodes}
       </div>
     );
   }
