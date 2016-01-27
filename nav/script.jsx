@@ -6,8 +6,16 @@ var Nav = React.createClass({
     var self = this;
     return (
       <div>
-        <ul className="nav">
-          Test
+        <ul className="nav"={this.props.menuItems.map(function (m, index) {
+            var style = '';
+            if (self.state.current === index) {
+              style = 'current';
+            }
+            return <li className={style} onClick={self.clicked.bind(self.index)}>
+              {m}
+            </li>
+        })}>
+
         </ul>
       </div>
     )
