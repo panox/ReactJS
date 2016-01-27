@@ -4,6 +4,12 @@ var Nav = React.createClass({
   },
   render: function () {
     var self = this;
-    
+    return (
+      <div>
+        <ul className="nav">
+          
+        </ul>
+      </div>
+    )
   }
 });
