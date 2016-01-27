@@ -17,6 +17,10 @@ app.use(express.static(path.join(__dirname, 'client')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
+app.get('/api/products', function (req, res) {
+  fs.readFile();
+});
+
 // Start Server
 app.listen(app.get('port'), function () {
   console.log('server listening');
