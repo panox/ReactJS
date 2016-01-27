@@ -17,10 +17,23 @@ app.use(express.static(path.join(__dirname, 'client')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
+// Get Products
 app.get('/api/products', function (req, res) {
   fs.readFile(PRODUCTS_FILE, function (err, data) {
     res.setHeader('Cache-Control', 'no-cache');
     res.json(JSON.parse(data));
+  });
+});
+
+// Add Products
+app.post('/api/products', function (req, res) {
+  fs.readFile(PRODUCTS_FILE, function (err, data) {
+    var products = JSON.parse(data);
+    products.puch(req.body);
+    fs.writeFile(PRODUCTS_FILE, JSON.strinify(products, null, 3), function (err) {
+      res.setHeader('Cache-Control', 'no-cache');
+      res.json(JSON.parse(products));
+    });
   });
 });
 
