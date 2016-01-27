@@ -49,7 +49,17 @@ var ProductForm = React.createClass({
   render: function () {
     return(
       <div>
-        Form
+        <h3>Add Product</h3>
+        <form>
+          <div className="form-group">
+            <input type="text" className="form-control" placeholder="name" ref="name"></input>
+            <textarea type="text" className="form-control" placeholder="description" ref="description"></textarea>
+            <input type="text" className="form-control" placeholder="price" ref="price"></input>
+            <input type="text" className="form-control" placeholder="buy" ref="buy"></input>
+            <input type="text" className="form-control" placeholder="image" ref="image"></input>
+            <button type="submit">Submit</button>
+          </div>
+        </form>
       </div>
     );
   }
