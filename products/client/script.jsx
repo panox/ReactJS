@@ -9,3 +9,21 @@ var Products = React.createClass({
     );
   }
 });
+
+var ProductForm = React.createClass({
+  render: function () {
+    return(
+      <div>
+      </div>
+    );
+  }
+});
+
+var ProductList = React.createClass({
+  render: function () {
+    return(
+      <div>
+      </div>
+    );
+  }
+});
