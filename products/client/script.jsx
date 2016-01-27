@@ -47,7 +47,19 @@ var Products = React.createClass({
 
 var ProductForm = React.createClass({
   handleSubmit: function () {
-    alert('send');
+    e.preventDefault();
+    var submittedField = {
+      id: this.refs.id.value.trim(),
+      name: this.refs.name.value.trim(),
+      description: this.refs.description.value.trim(),
+      price: this.refs.price.value.trim(),
+      buy_url: this.refs.buy.value.trim(),
+      image_url: this.refs.image.value.trim()
+    }
+
+    if (!submittedField.id || !submittedField.name) {
+      alert('please fill id and name');
+    }
   },
   render: function () {
     return(
