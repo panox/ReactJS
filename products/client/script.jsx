@@ -46,11 +46,14 @@ var Products = React.createClass({
 });
 
 var ProductForm = React.createClass({
+  handleSubmit: function () {
+    alert('send');
+  },
   render: function () {
     return(
       <div>
         <h3>Add Product</h3>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <input type="text" className="form-control" placeholder="name" ref="name"></input>
             <textarea type="text" className="form-control" placeholder="description" ref="description"></textarea>
