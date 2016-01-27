@@ -12,12 +12,12 @@ var Nav = React.createClass({
             if (self.state.current === index) {
               style = 'current';
             }
-            return <li className={style} onClick={self.clicked.bind(self.index)}>
+            return <li className={style} onClick={self.clicked.bind(self, index)}>
               {m}
             </li>
           })}
-
         </ul>
+        <h1>{this.props.menuItems[this.state.current]}</h1>
       </div>
     )
   }
