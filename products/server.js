@@ -18,7 +18,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
 app.get('/api/products', function (req, res) {
-  fs.readFile();
+  fs.readFile(PRODUCTS_FILE, function (err, data) {
+    res.setHeader('Cache-Control', 'no-cache');
+    res.json(JSON.parse(data));
+  });
 });
 
 // Start Server
