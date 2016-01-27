@@ -7,12 +7,12 @@ var Products = React.createClass({
       success: function (data) {
         console.log(data);
         setState({
-          productData: data 
+          productData: data
         });
-      },
+      }.bind(this),
       error: function (xhr, status, err) {
-
-      }
+        console.log(err);
+      }.bind(this)
     });
   },
   getDefaultprops: function () {
