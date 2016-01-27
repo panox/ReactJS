@@ -1,4 +1,7 @@
 var Products = React.createClass({
+  getInitialState: function () {
+    
+  },
   render: function () {
     return(
       <div>
@@ -29,6 +32,7 @@ var ProductList = React.createClass({
     );
   }
 });
+
 ReactDOM.render(
   <Products />,
   document.getElementById('products')
