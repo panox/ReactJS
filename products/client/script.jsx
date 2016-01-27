@@ -32,9 +32,14 @@ var Products = React.createClass({
   render: function () {
     return(
       <div>
-        <h2>Products</h2>
-        <ProductForm />
-        <ProductList productData={this.state.productData}/>
+        <div className="row">
+          <div className="col-md-6">
+            <ProductForm />
+          </div>
+          <div className="col-md-6">
+            <ProductList productData={this.state.productData}/>
+          </div>
+        </div>
       </div>
     );
   }
