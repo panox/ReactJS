@@ -76,8 +76,16 @@ var ProductList = React.createClass({
 var Product = React.createClass({
   render: function () {
     return(
-      <div>
-        <h3>{this.props.productFields.name}</h3>
+      <div className="well product">
+        <div className="row">
+          <div className="col-md-4">
+            <img className="img-responsive" src={this.props.productFields.image_url} />
+          </div>
+          <div className="col-md-8">
+            <h3>{this.props.productFields.name}</h3>
+            <p>{this.props.productFields.description}</p>
+          </div>
+        </div>
       </div>
     );
   }
