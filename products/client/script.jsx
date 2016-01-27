@@ -1,4 +1,7 @@
 var Products = React.createClass({
+  loadProductData: function () {
+    
+  },
   getDefaultprops: function () {
     return {
       interval: 2000
@@ -9,6 +12,9 @@ var Products = React.createClass({
       productData: [],
       url: "/api/products"
     };
+  },
+  componentDidMount: function () {
+    this.loadProductData();
   },
   render: function () {
     return(
