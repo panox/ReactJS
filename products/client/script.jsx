@@ -1,6 +1,16 @@
 var Products = React.createClass({
   loadProductData: function () {
-    
+    $.ajax({
+      url: this.state.url,
+      dataType: 'json',
+      cache: false,
+      success: function () {
+        
+      },
+      error: function () {
+
+      }
+    });
   },
   getDefaultprops: function () {
     return {
