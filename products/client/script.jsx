@@ -52,6 +52,19 @@ var ProductForm = React.createClass({
 
 var ProductList = React.createClass({
   render: function () {
+    var productNodes = this.props.productData.map(function (product, index) {
+      var productFields = {
+        id: product.id,
+        name: product.name,
+        description: product.description,
+        price: product.price,
+        buy_url: product.buy_url,
+        image_url: product.image_url
+      }
+      return(
+        <Product />
+      )
+    });
     return(
       <div>
         List
