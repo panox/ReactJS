@@ -7,7 +7,7 @@ var Nav = React.createClass({
     return (
       <div>
         <ul className="nav">
-
+          Test
         </ul>
       </div>
     )
