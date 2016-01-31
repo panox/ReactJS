@@ -59,7 +59,16 @@ var ProductForm = React.createClass({
 
     if (!submittedField.id || !submittedField.name) {
       alert('please fill id and name');
+      return;
     }
+    this.props.onProductSubmit(submittedFields);
+    this.refs.id.value = "";
+    this.refs.name.value = "";
+    this.refs.description.value = "";
+    this.refs.price.value = "";
+    this.refs.buy.value = "";
+    this.refs.image.value = "";
+
   },
   render: function () {
     return(
