@@ -14,6 +14,10 @@ var TaskList = React.createClass({
     return (
       <div>
         <button className="btn btn-primary btn-block" onClick={this.handdleAdd}>Add Task</button>
+        <ReactCSSTransitionGroup tranistionName="tasks" tranistionTimeout={1000}
+        tranistionLeaveTimeout={500}>
+        {items}
+        </ReactCSSTransitionGroup>
       </div>
     );
   }
