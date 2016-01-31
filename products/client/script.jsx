@@ -3,6 +3,21 @@ var Products = React.createClass({
     var products = this.state.productData;
     var newProducts = products.concat([product]);
     this.setState({productData: newProducts});
+    $.ajax({
+      url: this.state.url,
+      dataType: 'json',
+      type: 'POST',
+      data: product,
+      success: function (data) {
+        console.log(data);
+        this.setState({
+          productData: data
+        });
+      }.bind(this),
+      error: function (xhr, status, err) {
+        console.log(err);
+      }.bind(this)
+    });
   },
   loadProductData: function () {
     $.ajax({
