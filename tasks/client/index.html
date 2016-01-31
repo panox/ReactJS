@@ -13,6 +13,35 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.25/browser.min.js"></script>
 
   <script type="text/babel" src="./script.jsx"></script>
+
+  <style>
+    body{margin-top:30px;}
+    #tasks div div{
+      padding:10px;
+      background:#f4f4f4;
+      border:1px #ccc solid;
+      display:block;
+      width: 100%;
+      margin:5px;
+    }
+
+    .tasks-enter{
+      opacity:0.01;
+      transition: opacity 1s ease-in;
+    }
+
+    .tasks-enter.tasks-enter-active{
+      opacity:1;
+    }
+
+    .tasks-leave{
+      opacity:1;
+      transition: opacity 1s ease-in;
+    }
+    .tasks-leave.tasks-leave-active{
+      opacity:0.01;
+    }
+  </style>
 </head>
 
 <body>
