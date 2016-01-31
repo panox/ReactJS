@@ -3,6 +3,15 @@ var TaskList = React.createClass({
   getInitialState: function () {
     return {items: ['bring the kids to school']}
   },
+  handdleAdd: function () {
+    var newItems = this.state.items.concat([prompt('Add a task')]);
+    this.setState({
+      items: newItems
+    });
+  },
+  handleRemove: function () {
+
+  }
   render: function () {
     var items = this.state.items.map(function (item, index) {
       return(
@@ -22,3 +31,4 @@ var TaskList = React.createClass({
     );
   }
 });
+ReactDOM.render(<TaskList />, document.getElementById('tasks'));
