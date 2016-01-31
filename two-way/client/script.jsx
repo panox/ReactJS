@@ -1,5 +1,5 @@
 var MyComponent = React.createClass({
-  mixins: [Reac.addon.LinkedStateMixin],
+  mixins: [React.addons.LinkedStateMixin],
   getInitialState: function () {
     return {
       value: 'Some Value'
@@ -22,3 +22,5 @@ var MyInput = React.createClass({
     );
   }
 });
+
+React.render(< MyComponent/>, document.getElementById('example'));
