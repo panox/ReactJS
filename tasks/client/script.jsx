@@ -9,7 +9,12 @@ var TaskList = React.createClass({
         <div key={item} onClick={this.handleRemove.bind(this, index)}>
           {item}
         </div>
-      )
-    })
+      );
+    }.bind(this));
+    return (
+      <div>
+        <button className="btn btn-primary btn-block" onClick={this.handdleAdd}>Add Task</button>
+      </div>
+    );
   }
 });
