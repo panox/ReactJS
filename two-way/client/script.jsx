@@ -9,12 +9,16 @@ var MyComponent = React.createClass({
     return (
       <div>
         <h4>{this.state.value}</h4>
-        <MyInput />
+        <MyInput valueLink={this.linkState('value')}/>
       </div>
     );
   }
 });
 
 var MyInput = React.createClass({
-
+  render: function() {
+    return (
+      <input type="text" valueLink={this.props.valueLink}></input>
+    );
+  }
 });
