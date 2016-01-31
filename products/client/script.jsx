@@ -1,6 +1,8 @@
 var Products = React.createClass({
-  handleProductSubmit: function () {
-    
+  handleProductSubmit: function (product) {
+    var products = this.state.productData;
+    var newProducts = products.concat([product]);
+    this.setState({productData: newProducts});
   },
   loadProductData: function () {
     $.ajax({
@@ -51,7 +53,7 @@ var Products = React.createClass({
 var ProductForm = React.createClass({
   handleSubmit: function (e) {
     e.preventDefault();
-    var submittedFields = {
+    var product = {
       id: this.refs.id.value.trim(),
       name: this.refs.name.value.trim(),
       description: this.refs.description.value.trim(),
@@ -60,11 +62,11 @@ var ProductForm = React.createClass({
       image_url: this.refs.image.value.trim()
     }
 
-    if (!submittedFields.id || !submittedFields.name) {
+    if (!product.id || !product.name) {
       alert('please fill id and name');
       return;
     }
-    this.props.onProductSubmit(submittedFields);
+    this.props.onProductSubmit(product);
     this.refs.id.value = "";
     this.refs.name.value = "";
     this.refs.description.value = "";
