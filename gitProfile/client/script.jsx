@@ -22,11 +22,13 @@ var Profile = React.createClass({
       dataType: 'json',
       cache: false,
       success: function (data) {
-        setState({
+        console.log(data);
+        this.setState({
           userData: data
         });
       }.bind(this),
       error: function (xhr, status, err) {
+        this.setState({username: null});
         console.log(err);
       }.bind(this)
     });
