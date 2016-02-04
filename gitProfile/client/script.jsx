@@ -28,3 +28,8 @@ var Repos = React.createClass({
     );
   }
 });
+
+ReactDOM.render(
+  <Profile />,
+  document.getElementById("github-profiles")
+);
