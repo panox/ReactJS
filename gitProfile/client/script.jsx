@@ -20,7 +20,6 @@ var Profile = React.createClass({
       dataType: 'json',
       cache: false,
       success: function (data) {
-        console.log(data);
         this.setState({
           userData: data
         });
@@ -32,7 +31,20 @@ var Profile = React.createClass({
     });
   },
   loadRepoData: function () {
-
+    $.ajax({
+      url: this.props.urls.user + '/' + this.state.username + '/repos?per_page='+this.props.perPage+'?sort=created',
+      dataType: 'json',
+      cache: false,
+      success: function (data) {
+        this.setState({
+          repoData: data
+        });
+      }.bind(this),
+      error: function (xhr, status, err) {
+        this.setState({username: null});
+        console.log(err);
+      }.bind(this)
+    });
   },
   componentDidMount: function () {
     this.loadUserData();
@@ -67,6 +79,15 @@ var UserInfo = React.createClass({
             <span className="label label-success">{this.props.userData.public_gists} Public Gists</span>
             <span className="label label-info">{this.props.userData.followers} Followers</span>
             <span className="label label-danger">{this.props.userData.following} Following</span>
+          </div>
+        </div>
+        <br />
+        <div className="row">
+          <div className="col-md-12">
+            <ul className="list-group">
+              <li className="list-group-item"><strong>Username: </strong>{this.props.userData.login}</li>
+              <li className="list-group-item"><strong>Email Address: </strong>{this.props.userData.email}</li>
+            </ul>
           </div>
         </div>
       </div>
