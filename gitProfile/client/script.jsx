@@ -10,7 +10,11 @@ var Profile = React.createClass({
     };
   },
   getInitialState : function () {
-
+    return {
+      username: 'panox',
+      userData: [],
+      repoData: []
+    };
   },
   render: function() {
     return (
