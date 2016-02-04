@@ -112,13 +112,15 @@ var Repos = React.createClass({
 });
 
 var Repo = React.createClass({
-  render: function () {
-    <div className="repoItem">
-      <h4><a target="_blank" href={this.props.url}>{this.props.name}</a></h4>
-      <p>{this.props.description}</p>
-    </div>
+  render: function(){
+    return(
+        <div className="repoItem">
+          <h4><a target="_blank" href={this.props.url}>{this.props.name}</a></h4>
+          <p>{this.props.description}</p>
+        </div>
+      )
   }
-})
+});
 
 ReactDOM.render(
   <Profile />,
