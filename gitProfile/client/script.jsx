@@ -1,8 +1,6 @@
 var Profile = React.createClass({
   getDefaultProps: function () {
     return {
-      clientId: '3e78b0022afdceee9311',
-      clientSecret: '5180ff5893ac9764b93b9155b46c329e3543e313',
       urls : {
         user: 'https://api.github.com/users'
       },
@@ -18,7 +16,7 @@ var Profile = React.createClass({
   },
   loadUserData: function () {
     $.ajax({
-      url: this.props.urls.user + '/' + this.state.username + '?client_id=' + this.props.client_id + '&client_secret=' + this.props.clientSecret,
+      url: this.props.urls.user + '/' + this.state.username,
       dataType: 'json',
       cache: false,
       success: function (data) {
