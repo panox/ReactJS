@@ -61,6 +61,14 @@ var UserInfo = React.createClass({
             <a className="btn btn-primary" target="_blank" href={this.props.userData.html_url}>Visit GitHub Page</a>
           </div>
         </div>
+        <div className="row">
+          <div className="col-md-12">
+            <span className="label label-primary">{this.props.userData.public_repos} Repos</span>
+            <span className="label label-success">{this.props.userData.public_gists} Public Gists</span>
+            <span className="label label-info">{this.props.userData.followers} Followers</span>
+            <span className="label label-danger">{this.props.userData.following} Following</span>
+          </div>
+        </div>
       </div>
     );
   }
