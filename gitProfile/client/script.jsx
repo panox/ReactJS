@@ -8,3 +8,23 @@ var Profile = React.createClass({
     );
   }
 });
+
+var UserInfo = React.createClass({
+  render: function() {
+    return (
+      <div>
+        UserInfo
+      </div>
+    );
+  }
+});
+
+var Repos = React.createClass({
+  render: function() {
+    return (
+      <div>
+        Repos
+      </div>
+    );
+  }
+});
