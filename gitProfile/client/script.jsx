@@ -57,7 +57,8 @@ var UserInfo = React.createClass({
             <img className="thumbnail img-responsive" src={this.props.userData.avatar_url}></img>
           </div>
           <div className="col-md-8">
-
+            <h3>{this.props.userData.name}</h3>
+            <a className="btn btn-primary" target="_blank" href={this.props.userData.html_url}>Visit GitHub Page</a>
           </div>
         </div>
       </div>
