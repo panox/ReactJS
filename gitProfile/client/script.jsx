@@ -16,6 +16,22 @@ var Profile = React.createClass({
       repoData: []
     };
   },
+  loadUserData: function () {
+    $.ajax({
+      url: this.props.urls.user + '/' + this.state.username + '?client_id=' + this.props.client_id + '&client_secret=' + this.props.clientSecret,
+      dataType: 'json',
+      cache: false,
+      success: function () {
+
+      }.bind(this),
+      error: function () {
+
+      }.bind(this)
+    });
+  },
+  loadRepoData: function () {
+
+  },
   componentDidMount: function () {
     this.loadUserData();
     this.loadRepoData();
