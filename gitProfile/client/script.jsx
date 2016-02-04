@@ -41,7 +41,7 @@ var Profile = React.createClass({
   render: function() {
     return (
       <div>
-        <UserInfo />
+        <UserInfo userData={this.state.userData}/>
         <Repos />
       </div>
     );
@@ -52,7 +52,14 @@ var UserInfo = React.createClass({
   render: function() {
     return (
       <div>
-        UserInfo
+        <div className="row">
+          <div className="col-md-4">
+            <img className="thumbnail img-responsive" src={this.props.userData.avatar_url}></img>
+          </div>
+          <div className="col-md-8">
+
+          </div>
+        </div>
       </div>
     );
   }
