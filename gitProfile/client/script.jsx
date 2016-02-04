@@ -54,7 +54,7 @@ var Profile = React.createClass({
     return (
       <div>
         <UserInfo userData={this.state.userData}/>
-        <Repos />
+        <Repos repoData={this.state.repoData}/>
       </div>
     );
   }
@@ -96,12 +96,19 @@ var UserInfo = React.createClass({
 });
 
 var Repos = React.createClass({
-  render: function() {
-    return (
-      <div>
-        Repos
-      </div>
-    );
+  render: function(){
+    //console.log(this.props.repoData);
+    var repoNodes=this.props.repoData.map(function(repo, index){
+      return (
+          <Repo name={repo.name} description={repo.description} url={repo.html_url} key={index} />
+        );
+    });
+    return(
+        <div>
+          <h2 className="page-header">Latest Repos</h2>
+          {repoNodes}
+        </div>
+      )
   }
 });
 
