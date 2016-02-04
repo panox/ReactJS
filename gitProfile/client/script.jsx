@@ -97,7 +97,6 @@ var UserInfo = React.createClass({
 
 var Repos = React.createClass({
   render: function(){
-    //console.log(this.props.repoData);
     var repoNodes=this.props.repoData.map(function(repo, index){
       return (
           <Repo name={repo.name} description={repo.description} url={repo.html_url} key={index} />
@@ -111,6 +110,15 @@ var Repos = React.createClass({
       )
   }
 });
+
+var Repo = React.createClass({
+  render: function () {
+    <div className="repoItem">
+      <h4><a target="_blank" href={this.props.url}>{this.props.name}</a></h4>
+      <p>{this.props.description}</p>
+    </div>
+  }
+})
 
 ReactDOM.render(
   <Profile />,
