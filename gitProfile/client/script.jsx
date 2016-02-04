@@ -21,11 +21,13 @@ var Profile = React.createClass({
       url: this.props.urls.user + '/' + this.state.username + '?client_id=' + this.props.client_id + '&client_secret=' + this.props.clientSecret,
       dataType: 'json',
       cache: false,
-      success: function () {
-
+      success: function (data) {
+        setState({
+          userData: data
+        });
       }.bind(this),
-      error: function () {
-
+      error: function (xhr, status, err) {
+        console.log(err);
       }.bind(this)
     });
   },
