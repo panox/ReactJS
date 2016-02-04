@@ -16,6 +16,10 @@ var Profile = React.createClass({
       repoData: []
     };
   },
+  componentDidMount: function () {
+    this.loadUserData();
+    this.loadRepoData();
+  },
   render: function() {
     return (
       <div>
