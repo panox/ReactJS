@@ -32,7 +32,7 @@ var Profile = React.createClass({
   },
   loadRepoData: function () {
     $.ajax({
-      url: this.props.urls.user + '/' + this.state.username + '/repos?per_page='+this.props.perPage+'?sort=created',
+      url: this.props.urls.user + '/' + this.state.username + '/repos?per_page='+this.props.perPage+'&sort=created',
       dataType: 'json',
       cache: false,
       success: function (data) {
