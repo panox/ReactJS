@@ -122,6 +122,19 @@ var Repo = React.createClass({
   }
 });
 
+var SearchForm = React.createClass({
+  render: function(){
+    return(
+      <form onSubmit={this.submitForm} className="form-inline">
+        <div className="form-group">
+          <input type="text" ref="username" className="form-control searchInput" placeholder="Enter GitHub Username"></input>
+          <button type="submit" className="btn btn-primary">Submit</button>
+        </div>
+      </form>
+      )
+  }
+});
+
 ReactDOM.render(
   <Profile />,
   document.getElementById("github-profiles")
