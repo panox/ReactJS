@@ -124,6 +124,16 @@ var Repo = React.createClass({
 });
 
 var SearchForm = React.createClass({
+  submitForm: function (e) {
+    e.preventDefault();
+    var username = this.refs.username.value.trim();
+    if(!username) {
+      alert('Please Enter User');
+      return;
+    }
+    this.props.onFormSubmit(username);
+    this.refs.username.value = "";
+  }
   render: function(){
     return(
       <form onSubmit={this.submitForm} className="form-inline">
