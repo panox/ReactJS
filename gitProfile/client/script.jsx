@@ -15,7 +15,7 @@ var Profile = React.createClass({
   },
   getInitialState : function () {
     return {
-      username: 'panox',
+      username: null,
       userData: [],
       repoData: []
     };
@@ -59,9 +59,9 @@ var Profile = React.createClass({
   render: function() {
     return (
       <div>
+        {this.state.username ? <UserInfo userData={this.state.userData}/> : null }
+        {this.state.username ? <Repos repoData={this.state.repoData}/> : null }
         <SearchForm onFormSubmit={this.handleFormSubmit}/>
-        <UserInfo userData={this.state.userData}/>
-        <Repos repoData={this.state.repoData}/>
       </div>
     );
   }
