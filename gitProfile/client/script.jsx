@@ -53,6 +53,7 @@ var Profile = React.createClass({
   render: function() {
     return (
       <div>
+        <SearchForm />
         <UserInfo userData={this.state.userData}/>
         <Repos repoData={this.state.repoData}/>
       </div>
