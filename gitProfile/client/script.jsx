@@ -1,4 +1,10 @@
 var Profile = React.createClass({
+  handleFormSubmit: function (username) {
+    this.setState({username:username}, function () {
+      this.loadUserData();
+      this.loadRepoData();
+    });
+  },
   getDefaultProps: function () {
     return {
       urls : {
@@ -53,7 +59,7 @@ var Profile = React.createClass({
   render: function() {
     return (
       <div>
-        <SearchForm />
+        <SearchForm onFormSubmit={this.handleFormSubmit}/>
         <UserInfo userData={this.state.userData}/>
         <Repos repoData={this.state.repoData}/>
       </div>
@@ -133,7 +139,7 @@ var SearchForm = React.createClass({
     }
     this.props.onFormSubmit(username);
     this.refs.username.value = "";
-  }
+  },
   render: function(){
     return(
       <form onSubmit={this.submitForm} className="form-inline">
