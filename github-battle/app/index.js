@@ -17,7 +17,7 @@ class Badge extends React.Component {
     )
   }
 }
-Badge.propTypes = {
+Badge.Proptypes = {
   img: Proptypes.string.isRequired,
   name: Proptypes.string.isRequired,
   username: Proptypes.string.isRequired
@@ -31,22 +31,21 @@ class Users extends React.Component {
       <div>
         <h1>Friends</h1>
         <ul>
-          {friends.map((person)=><li>{person.name}</li>)}
+          {friends.map((person, index)=><li key={index}>{person.name}</li>)}
         </ul>
 
         <hr />
 
         <h1> Non Friends </h1>
         <ul>
-          {nonFriends.map((person)=><li>{person.name}</li>)}
+          {nonFriends.map((person, index)=><li key={index}>{person.name}</li>)}
         </ul>
       </div>
     )
   }
 }
-
-User.propTypes = {
-  list: propTypes.array.isRequired;
+Users.Proptypes = {
+  list: Proptypes.arrayOf(Proptypes.objet)
 }
 
 ReactDOM.render(
