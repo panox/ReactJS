@@ -3,8 +3,9 @@ var ReactDOM = require('react-dom');
 var Proptypes = require('prop-types');
 require('./index.css');
 
-
-
+/*
+  --- COMPONENTS ---
+*/
 class Badge extends React.Component {
   render() {
     return (
@@ -16,18 +17,42 @@ class Badge extends React.Component {
     )
   }
 }
-
 Badge.propTypes = {
   img: Proptypes.string.isRequired,
   name: Proptypes.string.isRequired,
   username: Proptypes.string.isRequired
 }
 
+class Users extends React.Component {
+  render() {
+    var friends = this.props.list.filter((person) => person.friend === true)
+    var nonFriends = this.props.list.filter((person) => person.friend === false)
+    return (
+      <div>
+        <h1>Friends</h1>
+        <ul>
+          {friends.map((person)=><li>{person.name}</li>)}
+        </ul>
+
+        <hr />
+
+        <h1> Non Friends </h1>
+        <ul>
+          {nonFriends.map((person)=><li>{person.name}</li>)}
+        </ul>
+      </div>
+    )
+  }
+}
+
 ReactDOM.render(
-  <Badge
-    name='Tyler McGinnis'
-    username='tylermcginnis'
-    img='https://avatars0.githubusercontent.com/u/2933430?v=3&s=460'
+  <Users list={[
+    { name: 'Tyler', friend: true },
+    { name: 'Ryan', friend: true },
+    { name: 'Michael', friend: false },
+    { name: 'Mikenzi', friend: false },
+    { name: 'Jessica', friend: true },
+    { name: 'Dan', friend: false } ]}
   />,
   document.getElementById('app')
 );
