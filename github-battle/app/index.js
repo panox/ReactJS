@@ -25,8 +25,8 @@ Badge.propTypes = {
 
 class Users extends React.Component {
   render() {
-    var friends = this.props.list.filter((person) => person.friend === true)
-    var nonFriends = this.props.list.filter((person) => person.friend === false)
+    var friends = this.props.list.filter((person) => person.friend === true);
+    var nonFriends = this.props.list.filter((person) => person.friend === false);
     return (
       <div>
         <h1>Friends</h1>
@@ -43,6 +43,10 @@ class Users extends React.Component {
       </div>
     )
   }
+}
+
+User.propTypes = {
+  list: propTypes.array.isRequired;
 }
 
 ReactDOM.render(
