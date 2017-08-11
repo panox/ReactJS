@@ -15,6 +15,10 @@ li {
   list-style-type: none;
 }
 
+li.active {
+  color:#d0021b;
+}
+
 .languages {
   display: flex;
   justify-content: center;
