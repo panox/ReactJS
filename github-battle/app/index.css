@@ -16,7 +16,7 @@ li {
 }
 
 li.active {
-  color:#d0021b; 
+  color:#d0021b;
 }
 
 .languages {
@@ -28,4 +28,24 @@ li.active {
   margin: 10px;
   font-weight: bold;
   cursor: pointer;
+}
+
+.popular-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.popular-item {
+  margin: 20px;
+  text-align: center;
+}
+
+.space-list-items {
+  margin-bottom: 7px;
+}
+
+.avatar {
+  width: 150px;
+  border-radius: 50%;
 }
